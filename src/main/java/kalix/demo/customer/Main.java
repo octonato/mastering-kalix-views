@@ -1,7 +1,7 @@
-package kalix.demo;
+package kalix.demo.customer;
 
-import kalix.springsdk.annotations.Acl;
 import kalix.springsdk.KalixConfiguration;
+import kalix.springsdk.annotations.Acl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;

@@ -14,7 +14,7 @@
     <dockerImage>my-docker-repo/${project.artifactId}</dockerImage>
     <dockerTag>${project.version}-${build.timestamp}</dockerTag>
     <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
-    <mainClass>kalix.demo.Main</mainClass>
+    <mainClass>kalix.demo.customer.Main</mainClass>
 
     <jdk.target>17</jdk.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -223,6 +223,9 @@
        <groupId>org.springframework.boot</groupId>
        <artifactId>spring-boot-maven-plugin</artifactId>
        <version>2.7.4</version>
+        <configuration>
+          <mainClass>${mainClass}</mainClass>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

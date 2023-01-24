@@ -1,0 +1,53 @@
+### create customer 001
+
+POST localhost:9000/customer/001
+Content-Type: application/json
+
+{
+  "name": "Acme",
+  "email": "info@acme.com",
+  "city": "London"
+}
+
+### create cusomter 002
+POST localhost:9000/customer/001
+Content-Type: application/json
+
+{
+  "name": "Carnaval Inc.",
+  "email": "info@carnaval.com",
+  "city": "Rio"
+}
+
+### get customer
+GET localhost:9000/customer/002
+
+### change city
+PATCH localhost:9000/customer/001/change/city
+Content-Type: application/json
+
+{
+  "newCityName": "Rio"
+}
+
+
+### get customer by city
+GET localhost:9000/customer/by-city/Rio
+
+### get CustomerView by city
+GET localhost:9000/customer-view/by-city/Rio
+
+
+### get CustomerView by city (projected)
+GET localhost:9000/customer-projection/by-city/Rio
+
+
+### get CustomerList by city
+GET localhost:9000/customer-list/by-city/Rio
+
+
+### get CustomerList by city (with paging)
+GET localhost:9000/customer-paging/by-city/Rio
+
+### get CustomerList by city (with paging)
+GET localhost:9000/customer-paging/by-city/Rio?pageToken=
