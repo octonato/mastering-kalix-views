@@ -14,8 +14,8 @@ POST localhost:9000/customer/001
 Content-Type: application/json
 
 {
-  "name": "Carnaval Inc.",
-  "email": "info@carnaval.com",
+  "name": "Carnival Inc.",
+  "email": "info@carnival.com",
   "city": "Rio"
 }
 
@@ -50,4 +50,4 @@ GET localhost:9000/customer-list/by-city/Rio
 GET localhost:9000/customer-paging/by-city/Rio
 
 ### get CustomerList by city (with paging)
-GET localhost:9000/customer-paging/by-city/Rio?pageToken=
+GET localhost:9000/customer-paging/by-city/Rio?pageToken=NA==
