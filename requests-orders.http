@@ -1,0 +1,45 @@
+### create customer customer1
+POST localhost:9000/customer/customer1
+Content-Type: application/json
+
+{
+  "name": "Acme",
+  "email": "info@acme.com",
+  "city": "London"
+}
+
+
+### get customer
+GET localhost:9000/customer/customer1
+
+
+### create order 001
+POST localhost:9000/order/order1/create/customer1
+Content-Type: application/json
+
+
+### Get order
+GET localhost:9000/order/order1
+
+### add item
+POST localhost:9000/order/order1/items/add
+Content-Type: application/json
+
+{
+  "itemId": "sku-1",
+  "name": "Kalix t-shirts",
+  "quantity": 5
+}
+
+
+### remove item
+POST localhost:9000/order/order1/items/sku-1/remove
+Content-Type: application/json
+
+
+### checkout
+POST localhost:9000/order/order1/checkout
+
+
+### orders by customers
+GET localhost:9000/customer-orders/customer1

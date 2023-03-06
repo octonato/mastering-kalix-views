@@ -2,8 +2,8 @@
 version: "3"
 services:
   kalix-proxy:
-    image: gcr.io/kalix-public/kalix-proxy:1.0.29
-    command: -Dconfig.resource=dev-mode.conf -Dkalix.proxy.eventing.support=none
+    image: gcr.io/kalix-public/kalix-proxy:1.1.4
+    command: -Dconfig.resource=dev-mode.conf
     ports:
       - "9000:9000"
     extra_hosts:
@@ -15,8 +15,4 @@ services:
       # Comment to enable ACL check in dev-mode
       # see https://docs.kalix.io/services/using-acls.html#_local_development_with_acls
       ACL_ENABLED: 'false'
-      # Uncomment to disable the JWT dev secret
-      # JWT_DEV_SECRET: "false"
-      # Uncomment to set the JWT dev secret issuer
-      # JWT_DEV_SECRET_ISSUER: "my-issuer"
-
+      VIEW_FEATURES_ALL: 'true'

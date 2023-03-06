@@ -1,8 +1,9 @@
 package kalix.demo.customer;
 
+import kalix.demo.Done;
 import kalix.javasdk.valueentity.ValueEntity;
-import kalix.springsdk.annotations.EntityKey;
-import kalix.springsdk.annotations.EntityType;
+import kalix.javasdk.annotations.EntityKey;
+import kalix.javasdk.annotations.EntityType;
 import org.springframework.web.bind.annotation.*;
 
 import static io.grpc.Status.Code.NOT_FOUND;
@@ -12,9 +13,9 @@ import static io.grpc.Status.Code.NOT_FOUND;
 @RequestMapping("/customer/{id}")
 public class CustomerEntity extends ValueEntity<CustomerEntity.Customer> {
 
-  public record Customer(String id, String name, String email, String city) {
+  public record Customer(String customerId, String name, String email, String city) {
     public Customer withCity(String newCityName) {
-      return new Customer(id, name, email, newCityName);
+      return new Customer(customerId, name, email, newCityName);
     }
   }
 

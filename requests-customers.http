@@ -1,6 +1,5 @@
-### create customer 001
-
-POST localhost:9000/customer/001
+### create customer customer1
+POST localhost:9000/customer/customer1
 Content-Type: application/json
 
 {
@@ -9,8 +8,8 @@ Content-Type: application/json
   "city": "London"
 }
 
-### create cusomter 002
-POST localhost:9000/customer/001
+### create cusomter customer2
+POST localhost:9000/customer/customer2
 Content-Type: application/json
 
 {
@@ -20,10 +19,10 @@ Content-Type: application/json
 }
 
 ### get customer
-GET localhost:9000/customer/002
+GET localhost:9000/customer/customer1
 
 ### change city
-PATCH localhost:9000/customer/001/change/city
+PATCH localhost:9000/customer/customer1/change/city
 Content-Type: application/json
 
 {
