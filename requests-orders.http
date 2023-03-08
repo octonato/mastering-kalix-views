@@ -1,3 +1,5 @@
+
+
 ### create customer customer1
 POST localhost:9000/customer/customer1
 Content-Type: application/json
@@ -13,16 +15,19 @@ Content-Type: application/json
 GET localhost:9000/customer/customer1
 
 
-### create order 001
-POST localhost:9000/order/order1/create/customer1
+### create order
+< {%
+  client.global.set("orderId", "order-1")
+%}
+POST localhost:9000/order/{{orderId}}/create/customer1
 Content-Type: application/json
 
 
 ### Get order
-GET localhost:9000/order/order1
+GET localhost:9000/order/{{orderId}}
 
 ### add item
-POST localhost:9000/order/order1/items/add
+POST localhost:9000/order/{{orderId}}/items/add
 Content-Type: application/json
 
 {
@@ -32,13 +37,8 @@ Content-Type: application/json
 }
 
 
-### remove item
-POST localhost:9000/order/order1/items/sku-1/remove
-Content-Type: application/json
-
-
 ### checkout
-POST localhost:9000/order/order1/checkout
+POST localhost:9000/order/{{orderId}}/checkout
 
 
 ### orders by customers
