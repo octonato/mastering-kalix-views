@@ -19,17 +19,13 @@ public class CustomerOrderView  {
   public record CustomerOrder(
     String customerId,
     String name,
-    String email,
-    String city,
-    String orderId,
-    List<OrderEntity.Item> items,
-    boolean checkedOut
+    List<OrderEntity.Order> orders
   ) {}
 
   @GetMapping("/customer-orders/{customerId}")
   @Query(
     """
-    SELECT *
+    SELECT customers.customerId, customers.name, orders.* as orders 
     FROM customers
     JOIN orders ON customers.customerId = orders.customerId
     WHERE customers.customerId = :customerId and orders.checkedOut = true
